@@ -58,5 +58,8 @@ $answer.addEventListener("keydown", (e) => {
     }
     $answer.style.display = "none";
     $answer.value = "";
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
   }
 });
