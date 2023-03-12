@@ -1,5 +1,25 @@
 import "./style.scss";
 
+const $countDown = document.getElementById("countDown");
+const TIME_LIMIT = 5;
+const limit = Date.now() + TIME_LIMIT * 1000;
+
+const timeout = () => {
+  clearInterval(timer);
+  location.reload();
+};
+
+const timer = setInterval(() => {
+  const rest = limit - Date.now();
+  if (rest > 0) {
+    $countDown.textContent = `${("0" + Math.floor(rest / 1000)).slice(
+      -2
+    )}:${Math.floor((rest % 1000) / 10)}`;
+  } else {
+    timeout();
+  }
+}, 10);
+
 function createQuestion() {
   const CALC_SIGNS = {
     plus: "+",
@@ -59,6 +79,7 @@ $answer.addEventListener("keydown", (e) => {
     $answer.style.display = "none";
     $answer.value = "";
     setTimeout(() => {
+      clearInterval(timer);
       location.reload();
     }, 1000);
   }
