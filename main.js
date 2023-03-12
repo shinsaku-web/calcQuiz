@@ -53,5 +53,6 @@ $answer.addEventListener("keydown", (e) => {
     } else {
       alert("不正解！");
     }
+    $answer.value = "";
   }
 });
