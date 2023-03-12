@@ -14,3 +14,7 @@ function createQuestion() {
 
 const question = createQuestion();
 console.log(question);
+const $question = document.getElementById("question");
+console.log($question.children[0]);
+console.log($question.children[1]);
+console.log($question.children[2]);
