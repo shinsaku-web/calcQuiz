@@ -1,10 +1,18 @@
 import "./style.scss";
 
 function createQuestion() {
+  const CALC_SIGNS = {
+    plus: "+",
+    minus: "-",
+    multiply: "×",
+    divide: "÷",
+  };
+  const calcSignList = Object.values(CALC_SIGNS);
   // 問題作成
-  const firstNumber = Math.floor(Math.random() * 10);
-  const secondNumber = Math.floor(Math.random() * 10);
-  const calcSign = "+";
+  const firstNumber = Math.ceil(Math.random() * 10);
+  const secondNumber = Math.ceil(Math.random() * 10);
+  const calcSign =
+    calcSignList[Math.floor(Math.random() * calcSignList.length)];
   return {
     first: firstNumber,
     second: secondNumber,
