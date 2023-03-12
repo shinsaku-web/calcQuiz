@@ -56,6 +56,7 @@ $answer.addEventListener("keydown", (e) => {
     } else {
       $incorrect.style.display = "block";
     }
+    $answer.style.display = "none";
     $answer.value = "";
   }
 });
