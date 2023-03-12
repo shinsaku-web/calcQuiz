@@ -44,3 +44,10 @@ console.log(question.answer);
 $question.children[0].textContent = question.first;
 $question.children[1].textContent = question.sign;
 $question.children[2].textContent = question.second;
+
+const $answer = document.getElementById("typeNumber");
+$answer.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    console.log(e.target.value);
+  }
+});
