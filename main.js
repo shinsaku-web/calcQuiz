@@ -84,3 +84,15 @@ $answer.addEventListener("keydown", (e) => {
     }, 1000);
   }
 });
+
+const $startButton = document.getElementById("startButton");
+const $stopButton = document.getElementById("stopButton");
+$startButton.addEventListener("click", () => {
+  location.reload();
+});
+const stop = () => {
+  clearInterval(timer);
+};
+$stopButton.addEventListener("click", () => {
+  stop();
+});
