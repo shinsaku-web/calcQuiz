@@ -26,13 +26,24 @@
           0:00:00
         </p>
         <div
-          id="question"
           style="max-width: 600px; font-size: 60px; margin-top: 40px"
-          class="bg-white p-4 shadow-sm mx-auto d-flex justify-content-center align-items-center gap-2 rounded"
+          class="bg-white p-4 shadow-sm mx-auto fw-bold rounded"
         >
-          <p class="text-center fw-bold mb-0">500</p>
-          <p class="text-center fw-bold mb-0">-</p>
-          <p class="text-center fw-bold mb-0">500</p>
+          <div
+            id="question"
+            style="display: flex"
+            class="justify-content-center align-items-center gap-2"
+          >
+            <p class="text-center mb-0">500</p>
+            <p class="text-center mb-0">-</p>
+            <p class="text-center mb-0">500</p>
+          </div>
+          <div id="resultCorrect" style="display: none">
+            <p style="color: red" class="text-center mb-0">◯正解</p>
+          </div>
+          <div id="resultIncorrect" style="display: none">
+            <p style="color: blue" class="text-center mb-0">×不正解</p>
+          </div>
         </div>
         <div style="max-width: 600px; margin-top: 80px" class="mx-auto">
           <label class="form-label fs-5" for="typeNumber">Answer</label>

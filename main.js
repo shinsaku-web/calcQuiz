@@ -45,13 +45,16 @@ $question.children[1].textContent = question.sign;
 $question.children[2].textContent = question.second;
 
 const $answer = document.getElementById("typeNumber");
+const $correct = document.getElementById("resultCorrect");
+const $incorrect = document.getElementById("resultIncorrect");
 $answer.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     const inputAnswer = e.target.value;
+    $question.style.display = "none";
     if (String(question.answer) === inputAnswer) {
-      alert("正解！");
+      $correct.style.display = "block";
     } else {
-      alert("不正解！");
+      $incorrect.style.display = "block";
     }
     $answer.value = "";
   }
