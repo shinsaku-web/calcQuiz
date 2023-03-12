@@ -4,19 +4,15 @@ const $countDown = document.getElementById("countDown");
 const TIME_LIMIT = 5;
 const limit = Date.now() + TIME_LIMIT * 1000;
 
-const timeout = () => {
-  clearInterval(timer);
-  location.reload();
-};
-
 const timer = setInterval(() => {
   const rest = limit - Date.now();
   if (rest > 0) {
-    $countDown.textContent = `${("0" + Math.floor(rest / 1000)).slice(
-      -2
-    )}:${Math.floor((rest % 1000) / 10)}`;
+    $countDown.textContent = `${("0" + Math.floor(rest / 1000)).slice(-2)}:${(
+      "0" + Math.floor((rest % 1000) / 10)
+    ).slice(-2)}`;
   } else {
-    timeout();
+    clearInterval(timer);
+    location.reload();
   }
 }, 10);
 
@@ -90,9 +86,9 @@ const $stopButton = document.getElementById("stopButton");
 $startButton.addEventListener("click", () => {
   location.reload();
 });
-const stop = () => {
-  clearInterval(timer);
-};
+
 $stopButton.addEventListener("click", () => {
-  stop();
+  clearInterval(timer);
+  $stopButton.style.display = "none";
+  $startButton.style.display = "block";
 });
