@@ -18,3 +18,7 @@ const $question = document.getElementById("question");
 console.log($question.children[0]);
 console.log($question.children[1]);
 console.log($question.children[2]);
+
+$question.children[0].textContent = question.first;
+$question.children[1].textContent = question.sign;
+$question.children[2].textContent = question.second;
