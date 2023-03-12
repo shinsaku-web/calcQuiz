@@ -2,8 +2,8 @@ import "./style.scss";
 
 function createQuestion() {
   // 問題作成
-  const firstNumber = 100;
-  const secondNumber = 100;
+  const firstNumber = Math.floor(Math.random() * 10);
+  const secondNumber = Math.floor(Math.random() * 10);
   const calcSign = "+";
   return {
     first: firstNumber,
