@@ -13,19 +13,33 @@ function createQuestion() {
   const secondNumber = Math.ceil(Math.random() * 10);
   const calcSign =
     calcSignList[Math.floor(Math.random() * calcSignList.length)];
+
+  const getResult = () => {
+    if (calcSign === CALC_SIGNS.plus) {
+      return firstNumber + secondNumber;
+    }
+    if (calcSign === CALC_SIGNS.minus) {
+      return firstNumber - secondNumber;
+    }
+    if (calcSign === CALC_SIGNS.multiply) {
+      return firstNumber * secondNumber;
+    }
+    if (calcSign === CALC_SIGNS.divide) {
+      return firstNumber / secondNumber;
+    }
+  };
+  const result = getResult();
   return {
     first: firstNumber,
     second: secondNumber,
     sign: calcSign,
+    answer: result,
   };
 }
 
 const question = createQuestion();
-console.log(question);
 const $question = document.getElementById("question");
-console.log($question.children[0]);
-console.log($question.children[1]);
-console.log($question.children[2]);
+console.log(question.answer);
 
 $question.children[0].textContent = question.first;
 $question.children[1].textContent = question.sign;
